@@ -79,8 +79,9 @@ def auth():
     body = {'email': email, 'password': password}
 
     user_data = body
+    print(f'user_data is a {type(user_data)} its value is {user_data} ')
 
-    return jsonify(token=_get_jwt(user_data).decode('utf-8'))
+    return jsonify(token=_get_jwt(user_data))
 
 
 @APP.route('/contents', methods=['GET'])
